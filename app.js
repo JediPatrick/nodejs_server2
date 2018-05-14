@@ -15,8 +15,7 @@ mongoose.connect(
   "mongodb+srv://admin:JKZFmd2TpWD41osC@cluster0-ksida.mongodb.net/test?retryWrites=true"
 );
 
-const productRoutes = require('./api/routes/products');
-const ordersRoutes = require('./api/routes/orders');
+const tripRoutes = require('./api/routes/trip');
 const usersRoutes = require('./api/routes/users');
 
 app.use(morganlog('dev'));
@@ -37,8 +36,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/products', productRoutes);
-app.use('/orders', ordersRoutes);
+app.use('/trip', tripRoutes);
 app.use('/users', usersRoutes);
 
 
