@@ -15,23 +15,7 @@ const Trip = require("../models/trip");
 const checkAuth = require('../middleware/check-auth');
 
 
-//router.get('/', (req, res, next)=> {
-//    //const token = req.headers.authorization.split(" ")[1];
-//    res.status(200).json({
-//        //tokenm: token, 
-//        message: 'get request'
-//        
-//    });
-//});
-//
-//router.get('/log', checkAuth, (req, res, next)=> {
-//    //const token = req.headers.authorization.split(" ")[1];
-//    res.status(200).json({
-//        //tokenm: token, 
-//        message: 'sucess'
-//        
-//    });
-//});
+
 
 router.get("/:userID", checkAuth, (req, res, next) => {
     const userid2 = req.params.userID;
@@ -39,13 +23,9 @@ router.get("/:userID", checkAuth, (req, res, next) => {
     .exec()
     .then(docs => {
       console.log(docs);
-      //   if (docs.length >= 0) {
+
       res.status(200).json(docs);
-      //   } else {
-      //       res.status(404).json({
-      //           message: 'No entries found'
-      //       });
-      //   }
+
     })
     .catch(err => {
       console.log(err);
