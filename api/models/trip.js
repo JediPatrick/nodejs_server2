@@ -14,7 +14,8 @@ const tripSchema = mongoose.Schema({
     name: String,
     length: Number,
     userid: mongoose.Schema.Types.ObjectId,
-    time_length: Number
+    time_length: Number,
+    speed: Number
 });
 
 module.exports = mongoose.model('Trip', tripSchema);

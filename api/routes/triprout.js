@@ -44,7 +44,8 @@ router.post("/createtrip", checkAuth, (req, res, next) => {
     name: req.body.name,
     length: req.body.length,
     userid: req.body.userid,
-    time_length: req.body.time_length
+    time_length: req.body.time_length,
+    speed: req.body.speed
   });
   trip
     .save()
